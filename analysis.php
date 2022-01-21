@@ -61,13 +61,13 @@ if ($burgers == "off" && $pasta = "off" && $pizza == "off") {
     die;
 }
 
-// valiadte adress  https://blackandwhiteshades.wordpress.com/2016/05/12/google-maps-api-simple-example-to-validate-address-using-php/
+// valiadte adress  - https://blackandwhiteshades.wordpress.com/2016/05/12/google-maps-api-simple-example-to-validate-address-using-php/
 
 $url = 'https://maps.googleapis.com/maps/api/geocode/json?address=' . $address . '&sensor=false' . '&key=AIzaSyA_jmIt2_1H9sMdzcvcsiK9NTvJv9tqNmg';
 $url = preg_replace("/ /", "%20", $url);
 $geocode = file_get_contents($url);
 $results = json_decode($geocode, true);
-// print_r($results);
+
 
 
 if (count($results['results']) == 1) {
